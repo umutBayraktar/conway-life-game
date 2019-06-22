@@ -33,3 +33,6 @@ class InputTest(unittest.TestCase):
 
     def test_bigger_than_max_indis(self):
         self.assertEqual(parseInput('0,10'), 'İndis değeri 7 den büyük olamaz')
+
+    def test_bigger_than_max_indis_all(self):
+        self.assertEqual(parseInput('8,10'), 'İndis değeri 7 den büyük olamaz')
