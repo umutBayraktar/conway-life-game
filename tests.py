@@ -25,3 +25,8 @@ class InputTest(unittest.TestCase):
     def test_x_negative(self):
         self.assertEqual(parseInput('-3,5'),'İndis değeri negatif olamaz')
 
+    def test_y_negative(self):
+        self.assertEqual(parseInput('3,-5'), 'İndis değeri negatif olamaz')
+
+    def test_x_and_y_negative(self):
+        self.assertEqual(parseInput('-2,-4'), 'İndis değeri negatif olamaz')
