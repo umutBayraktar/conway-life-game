@@ -34,3 +34,13 @@ def loop_input(input_string):
 
     if input_string == '' or input_string is None:
         return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+
+    try:
+        number = int(input_string)
+        if number is 1 or number is 2:
+            return number
+        else:
+            return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+
+    except:
+        return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'

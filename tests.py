@@ -37,6 +37,9 @@ class InputTest(unittest.TestCase):
     def test_bigger_than_max_indis_all(self):
         self.assertEqual(parse_input('8,10'), 'İndis değeri 7 den büyük olamaz')
 
+    def test_loop_input_true(self):
+        self.assertEqual(loop_input(2),2)
+
     def test_loop_input_empty(self):
         self.assertEqual(loop_input(''),'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz')
 
