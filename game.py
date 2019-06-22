@@ -12,6 +12,9 @@ def parseInput(input_string):
             try:
                 x = int(parsed_input[0])
                 y = int(parsed_input[1])
+                if x < 0 or y < 0:
+                    return 'İndis değeri negatif olamaz'
+
                 return {'x':x,'y': y}
             except:
                 return 'Lütfen nümerik veri giriniz'
