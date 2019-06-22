@@ -1,5 +1,7 @@
 
-def parseInput(input_string):
+
+
+def parse_input(input_string):
 
     if input_string == '' or input_string is None:
         return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
@@ -28,4 +30,7 @@ def parseInput(input_string):
         return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
 
 
+def loop_input(input_string):
 
+    if input_string == '' or input_string is None:
+        return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'

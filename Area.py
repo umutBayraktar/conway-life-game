@@ -1,7 +1,7 @@
 from .Cell import Cell
 
 
-class Area:
+class Area():
 
     array = range(0, 8)
     cells = [[], [], [], [], [], [], [], []]
