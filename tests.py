@@ -30,3 +30,6 @@ class InputTest(unittest.TestCase):
 
     def test_x_and_y_negative(self):
         self.assertEqual(parseInput('-2,-4'), 'İndis değeri negatif olamaz')
+
+    def test_bigger_than_max_indis(self):
+        self.assertEqual(parseInput('0,10'), 'İndis değeri 7 den büyük olamaz')

@@ -14,7 +14,8 @@ def parseInput(input_string):
                 y = int(parsed_input[1])
                 if x < 0 or y < 0:
                     return 'İndis değeri negatif olamaz'
-
+                elif x > 7 or y >7:
+                    return 'İndis değeri 7 den büyük olamaz'
                 return {'x':x,'y': y}
             except:
                 return 'Lütfen nümerik veri giriniz'
