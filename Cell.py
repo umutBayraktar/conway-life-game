@@ -11,7 +11,11 @@ class Cell():
         pass
 
     def print_status(self):
-        pass
+        if self.current_status:
+            return '[X]'
+        else :
+            return '[ ]'
+
 
     def is_live(self):
         pass
