@@ -1,10 +1,11 @@
 
 class Cell():
 
+    #başlangıç değerlerini init içinde tanımla
     x = 0
     y = 0
-    prev_status=False
-    current_status=False
+    prev_status = False
+    current_status = False
 
     def update_status(self):
         pass
@@ -22,4 +23,5 @@ class Cell():
         pass
 
     def revive(self):
-        pass
+        self.current_status = True
+        return self.current_status
