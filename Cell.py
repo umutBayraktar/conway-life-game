@@ -1,8 +1,6 @@
 
 class Cell():
 
-    #başlangıç değerlerini init içinde tanımla
-
 
     def __init__(self):
         self.x = 0
