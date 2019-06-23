@@ -6,7 +6,7 @@ class Area():
     array = range(0, 8)
     cells = [[], [], [], [], [], [], [], []]
 
-    def __init__(self,input_array):
+    def __init__(self, input_array):
         for i in self.array:
             for j in self.array:
                 self.cells[i].append(Cell())
