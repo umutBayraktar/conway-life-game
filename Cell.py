@@ -2,10 +2,13 @@
 class Cell():
 
     #başlangıç değerlerini init içinde tanımla
-    x = 0
-    y = 0
-    prev_status = False
-    current_status = False
+
+
+    def __init__(self):
+        self.x = 0
+        self.y = 0
+        self.prev_status=False
+        self.current_status=False
 
     def update_status(self):
         pass
