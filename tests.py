@@ -8,10 +8,9 @@ class InputTest(unittest.TestCase):
         self.assertEqual(parse_input('5,3'), {'x': 5,'y': 3})
 
     def test_empty(self):
-        self.assertEqual(parse_input(''), 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')
-
+        self.assertEqual(parse_input(''), None)
     def test_null(self):
-        self.assertEqual(parse_input(''), 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')
+        self.assertEqual(parse_input(''),None)
 
     def test_string(self):
         self.assertEqual(parse_input('dsdsad'), 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')

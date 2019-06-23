@@ -1,10 +1,11 @@
+from Area import Area
 
-
-
+ #yanlışlarda none dönsün ekrana hatayı yazdırsın
 def parse_input(input_string):
 
     if input_string == '' or input_string is None:
-        return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
+        print('Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')
+        return None
 
     if ',' in input_string:
         parsed_input=input_string.split(',')
@@ -30,6 +31,7 @@ def parse_input(input_string):
         return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
 
 
+#yanlışlarda -1 dönsün ekrana hatayı yazdırsın
 def loop_input(input_string):
 
     if input_string == '' or input_string is None:
@@ -44,3 +46,7 @@ def loop_input(input_string):
 
     except:
         return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+
+
+
+
