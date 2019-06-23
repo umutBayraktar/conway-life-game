@@ -102,6 +102,25 @@ class CellTests(unittest.TestCase):
         cell_object = Cell()
         self.assertEqual(cell_object.set_status(7), False)
 
+    def test_is_live(self):
+        cell_object = Cell()
+        cell_object.prev_status = True
+        self.assertEqual(cell_object.is_live(), True)
+
+    def test_is_live_2(self):
+        cell_object = Cell()
+        cell_object.prev_status = False
+        self.assertEqual(cell_object.is_live(), False)
+
+    def test_is_dead(self):
+        cell_object = Cell()
+        cell_object.prev_status = False
+        self.assertEqual(cell_object.is_dead(),True)
+
+    def test_is_dead(self):
+        cell_object = Cell()
+        cell_object.prev_status = True
+        self.assertEqual(cell_object.is_dead(),False)
 
 
 class AreaTest(unittest.TestCase):
