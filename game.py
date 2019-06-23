@@ -1,6 +1,6 @@
 from Area import Area
 
- #yanlışlarda none dönsün ekrana hatayı yazdırsın
+
 def parse_input(input_string):
 
     if input_string == '' or input_string is None:
@@ -10,42 +10,46 @@ def parse_input(input_string):
     if ',' in input_string:
         parsed_input=input_string.split(',')
         if len(parsed_input) != 2:
-            return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
+            print('Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')
+            return None
         else: #len == 2 x,y
             try:
                 x = int(parsed_input[0])
                 y = int(parsed_input[1])
                 if x < 0 or y < 0:
-                    return 'İndis değeri negatif olamaz'
-                elif x > 7 or y >7:
-                    return 'İndis değeri 7 den büyük olamaz'
+                    print('İndis değeri negatif olamaz')
+                    return None
+                elif x > 7 or y > 7:
+                    print('İndis değeri 7 den büyük olamaz')
+                    return None
                 else:
-                    return {'x':x,'y': y}
+                    return {'x': x ,'y': y}
             except:
-                return 'Lütfen nümerik veri giriniz'
-
-
-
-
+                print('Lütfen nümerik veri giriniz')
+                return None
     else:
-        return 'Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz'
+        print('Yanlış girdi,lütfen koordinat bilgisini x,y şeklinde giriniz')
+        return None
 
 
-#yanlışlarda -1 dönsün ekrana hatayı yazdırsın
+
 def loop_input(input_string):
 
     if input_string == '' or input_string is None:
-        return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+        print('Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz')
+        return -1
 
     try:
         number = int(input_string)
         if number is 1 or number is 2:
             return number
         else:
-            return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+            print('Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz')
+            return -1
 
     except:
-        return 'Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz'
+        print('Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz')
+        return -1
 
 
 
