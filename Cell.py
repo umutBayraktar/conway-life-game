@@ -16,6 +16,13 @@ class Cell():
         else :
             return '[ ]'
 
+    def set_status(self,neighbour_count):
+        if neighbour_count < 2 or neighbour_count > 3:
+            self.dead()
+        elif neighbour_count is 3 and self.prev_status is False:
+            self.revive()
+        return self.current_status
+
 
     def is_live(self):
         pass
