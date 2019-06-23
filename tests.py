@@ -1,5 +1,6 @@
 import unittest
 from game import parse_input,loop_input
+from Cell import Cell
 
 class InputTest(unittest.TestCase):
 
@@ -50,3 +51,10 @@ class InputTest(unittest.TestCase):
 
     def test_loop_input_other_number(self):
         self.assertEqual(loop_input('5'), -1)
+
+
+class CellTests(unittest.TestCase):
+
+    def test_revive(self):
+        cell_object = Cell()
+        self.assertEqual(cell_object.revive(), True)
