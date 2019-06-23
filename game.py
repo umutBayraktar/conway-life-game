@@ -48,9 +48,18 @@ def loop_input(input_string):
             return -1
 
     except:
-        print('Lütfen konum girmek için 1 işlemi sonlandırmak için 2 giriniz')
+        print('Lütfen konum girmek için 1 işlemi sonlandırmak için herhangi bir  giriniz')
         return -1
 
 
+#-------------------------------------------------------------------------------
 
-
+print("Canway'in Hayat Oyunu\n")
+print("8 x 8 lik bir alan için başlangıçta hayatta olan canlıların\n"
+      "x,y şekinde indis bilrilerini giriniz.\n"
+      "Örneğin yatayda 2 düşeyde 3 indisindeki canlı için 2,2")
+inputs=[]
+while True:
+    position = parse_input(input("Konum :"))
+    if position is not None:
+        inputs.append(position)

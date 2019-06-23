@@ -37,7 +37,7 @@ class InputTest(unittest.TestCase):
         self.assertEqual(parse_input('8,10'), None)
 
     def test_loop_input_true(self):
-        self.assertEqual(loop_input(2), 2)
+        self.assertEqual(loop_input(1), 1)
 
     def test_loop_input_empty(self):
         self.assertEqual(loop_input(''), -1)
