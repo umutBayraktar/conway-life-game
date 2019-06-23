@@ -36,7 +36,7 @@ def parse_input(input_string):
 def loop_input(input_string):
 
     if input_string == '' or input_string is None:
-        print("Tekrar konum girmek için 1'e , konum girme işlemini sonlandırmak için 2 giriniz")
+        print("Yanlış girdi,lütfen 1 ve ya 2 giriniz")
         return -1
 
     try:
@@ -44,11 +44,10 @@ def loop_input(input_string):
         if number is 1 or number is 2:
             return number
         else:
-            print("Tekrar konum girmek için 1'e , konum girme işlemini sonlandırmak için 2 giriniz")
+            print("Yanlış girdi,lütfen 1 ve ya 2 giriniz")
             return -1
-
     except:
-        print("Tekrar konum girmek için 1'e , konum girme işleminı sonlandırmak için 2 giriniz")
+        print("Yanlış girdi,lütfen 1 ve ya 2 giriniz")
         return -1
 
 
@@ -56,17 +55,21 @@ def loop_input(input_string):
 
 print("Canway'in Hayat Oyunu\n")
 print("8 x 8 lik bir alan için başlangıçta hayatta olan canlıların\n"
-      "x,y şekinde indis bilrilerini giriniz.\n"
+      "x,y şekinde indis bilgilerini giriniz.\n"
       "Örneğin yatayda 2 düşeyde 3 indisindeki canlı için 2,2")
 inputs = []
 while True:
     position = parse_input(input("Konum :"))
     if position is not None:
-        inputs.append(position)
-        if len(inputs) == 64:
+        if len(inputs) < 64:
+            inputs.append(position)
+            re_input = loop_input(input("Tekrar konum girmek için 1 , konum girme işlemini sonlandırmak için 2 giriniz: "))
+            while re_input == -1:
+                re_input = loop_input(input("Tekrar konum girmek için 1 , konum girme işlemini sonlandırmak için 2 giriniz: "))
+            if re_input == 2:
+                    break
+        else:
             print("Maksimum girdi sayısına ulaşıldı")
             break
-        re_input =loop_input(input())
-        if re_input == 2:
-            break
+
 
