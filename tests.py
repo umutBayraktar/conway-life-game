@@ -62,3 +62,7 @@ class CellTests(unittest.TestCase):
     def test_dead(self):
         cell_object=Cell()
         self.assertEqual(cell_object.dead(), False)
+
+    def test_print_status(self):
+        cell_object=Cell()
+        self.assertEqual(cell_object.print_status(),'[X]')
