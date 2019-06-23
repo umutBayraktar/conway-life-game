@@ -58,3 +58,7 @@ class CellTests(unittest.TestCase):
     def test_revive(self):
         cell_object = Cell()
         self.assertEqual(cell_object.revive(), True)
+
+    def test_dead(self):
+        cell_object=Cell()
+        self.assertEqual(cell_object.dead(), False)

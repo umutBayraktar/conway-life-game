@@ -20,7 +20,8 @@ class Cell():
         pass
 
     def dead(self):
-        pass
+        self.current_status = False
+        return self.current_status
 
     def revive(self):
         self.current_status = True
