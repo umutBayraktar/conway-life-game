@@ -1,5 +1,5 @@
 import unittest
-from game import parse_input,loop_input
+from game import parse_input,loop_input,positive_int_input
 from Cell import Cell
 from Area import Area
 
@@ -53,6 +53,20 @@ class InputTest(unittest.TestCase):
     def test_loop_input_other_number(self):
         self.assertEqual(loop_input('5'), -1)
 
+    def test_positive_integer_input(self):
+        self.assertEqual(positive_int_input("sdsds"),None)
+
+    def test_positive_integer_input_2(self):
+        self.assertEqual(positive_int_input("2"),2)
+
+    def test_positive_integer_input_3(self):
+        self.assertEqual(positive_int_input("-2"),None)
+
+    def test_positive_integer_input_4(self):
+        self.assertEqual(positive_int_input("0"),None)
+
+    def test_positive_integer_input_5(self):
+        self.assertEqual(positive_int_input(""),None)
 
 class CellTests(unittest.TestCase):
 
