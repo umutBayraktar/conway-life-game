@@ -122,6 +122,17 @@ class CellTests(unittest.TestCase):
         cell_object.prev_status = True
         self.assertEqual(cell_object.is_dead(),False)
 
+    def test_upgrade_status(self):
+        cell_object = Cell()
+        cell_object.prev_status = True
+        cell_object.current_status = False
+        self.assertEqual(cell_object.upgrade_status(), False)
+
+    def test_upgrade_status_2(self):
+        cell_object = Cell()
+        cell_object.prev_status = False
+        cell_object.current_status = True
+        self.assertEqual(cell_object.upgrade_status(), True)
 
 class AreaTest(unittest.TestCase):
 
