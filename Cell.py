@@ -16,7 +16,7 @@ class Cell():
         else :
             return '[ ]'
 
-    def set_status(self,neighbour_count):
+    def set_status(self, neighbour_count):
         if neighbour_count < 2 or neighbour_count > 3:
             self.dead()
         elif neighbour_count is 3 and self.prev_status is False:
@@ -25,10 +25,10 @@ class Cell():
 
 
     def is_live(self):
-        pass
+        return self.prev_status == True
 
     def is_dead(self):
-        pass
+        return self.prev_status == False
 
     def dead(self):
         self.current_status = False
