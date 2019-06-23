@@ -63,6 +63,12 @@ class CellTests(unittest.TestCase):
         cell_object=Cell()
         self.assertEqual(cell_object.dead(), False)
 
-    def test_print_status(self):
+    def test_print_status_live(self):
         cell_object=Cell()
-        self.assertEqual(cell_object.print_status(),'[X]')
+        cell_object.current_status = True
+        self.assertEqual(cell_object.print_status(), '[X]')
+
+    def test_print_status_dead(self):
+        cell_object = Cell()
+        cell_object.current_status = False
+        self.assertEqual(cell_object.print_status(), '[ ]')
