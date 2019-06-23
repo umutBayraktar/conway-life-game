@@ -1,6 +1,7 @@
 import unittest
 from game import parse_input,loop_input
 from Cell import Cell
+from Area import Area
 
 class InputTest(unittest.TestCase):
 
@@ -72,3 +73,60 @@ class CellTests(unittest.TestCase):
         cell_object = Cell()
         cell_object.current_status = False
         self.assertEqual(cell_object.print_status(), '[ ]')
+
+    def test_set_status_count_2_alive(self):
+        cell_object = Cell()
+        cell_object.current_status=True
+        self.assertEqual(cell_object.set_status(2),True)
+
+    def test_set_status_count_2_dead(self):
+        cell_object = Cell()
+        cell_object.current_status=False
+        self.assertEqual(cell_object.set_status(2),False)
+
+    def test_set_status_count_3_alive(self):
+        cell_object = Cell()
+        cell_object.current_status=True
+        self.assertEqual(cell_object.set_status(3), True)
+
+    def test_set_status_count_3_dead(self):
+        cell_object = Cell()
+        cell_object.current_status = False
+        self.assertEqual(cell_object.set_status(3), True)
+
+    def test_set_status_alone(self):
+        cell_object = Cell()
+        self.assertEqual(cell_object.set_status(1), False)
+
+    def test_set_status_crowded(self):
+        cell_object = Cell()
+        self.assertEqual(cell_object.set_status(7), False)
+
+
+
+class AreaTest(unittest.TestCase):
+
+    def test_print_area(self):
+        input_cells = [{'x': 0, 'y': 0}]
+        area = Area(input_cells)
+        self.assertEqual(area.print_area(),
+                         "[X][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n")
+    def test_print_area_2(self):
+        input_cells = [{'x': 0, 'y': 0}, {'x': 1, 'y': 3}]
+        area = Area(input_cells)
+        self.assertEqual(area.print_area(),
+                         "[X][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][X][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n"
+                         "[ ][ ][ ][ ][ ][ ][ ][ ]\n")
