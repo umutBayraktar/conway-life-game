@@ -66,3 +66,15 @@ class Area():
             if rigth_cell.is_live():
                 neighbor_count += 1
         return neighbor_count
+
+    def update_cells(self):
+
+        for x in self.array:
+            for y in self.array:
+                n_count=self.check_environment(x,y)
+                self.cells[x][y].set_status(n_count)
+
+    def upgrade(self):
+        for x in self.array:
+            for y in self.array:
+                self.cells[x][y].upgrade_status()
