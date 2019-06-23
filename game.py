@@ -51,6 +51,19 @@ def loop_input(input_string):
         return -1
 
 
+def positive_int_input(input_string):
+
+    if input_string == '' or input_string is None:
+        return None
+    try:
+        number = int(input_string)
+        if number > 0:
+            return number
+        else:
+            return None
+    except:
+        return None
+
 #-------------------------------------------------------------------------------
 
 print("Canway'in Hayat Oyunu\n")
@@ -71,5 +84,19 @@ while True:
         else:
             print("Maksimum girdi sayısına ulaşıldı")
             break
+
+
+rep_count=positive_int_input(input("Oyun tekrar sayısını giriniz:"))
+while(rep_count is None):
+    rep_count = positive_int_input(input("Oyun tekrar sayısını giriniz:"))
+
+game_area = Area(inputs)
+for i in range(rep_count):
+
+    print("{0}. oyun\n".format(i+1))
+    print(game_area.print_area())
+    game_area.update_cells()
+    game_area.upgrade()
+    print("------------------------\n\n")
 
 
